@@ -46,4 +46,11 @@ public class ProductController {
             throw new EntityNotFoundException();
         }
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteProduct(@PathVariable String id){
+        repository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
